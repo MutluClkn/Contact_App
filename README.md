@@ -5,8 +5,8 @@
 - Static API created to get data.
 - Created with MVC design pattern.
 
-iPhone 13 Pro Max
+## iPhone 13 Pro Max
 ![](https://github.com/MutluClkn/Contact_App/blob/main/Gifs/app1.gif)
 
-iPhone 8
+## iPhone 8
 ![](https://github.com/MutluClkn/Contact_App/blob/main/Gifs/app2.gif)
