@@ -24,9 +24,8 @@ class ContactsTableViewCell: UITableViewCell {
     let jobTitleLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.textColor = .white
-        label.backgroundColor = UIColor(hexString: "#3004AD")
+        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = label.font.italic
         label.textAlignment = .center
         return label
     }()
@@ -67,7 +66,7 @@ class ContactsTableViewCell: UITableViewCell {
             make.right.equalTo(flagImage.snp_leftMargin).offset(-20)
         }
         jobTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp_bottomMargin).offset(15)
+            make.top.equalTo(nameLabel.snp_bottomMargin).offset(10)
             make.left.equalTo(contactImage.snp_rightMargin).offset(20)
         }
         contactImage.snp.makeConstraints { make in

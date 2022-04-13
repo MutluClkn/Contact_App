@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Hex Color
 extension UIColor{
     
     /// Converting hex string to UIColor
@@ -28,5 +29,36 @@ extension UIColor{
             (a, r, g, b) = (255, 0, 0, 0)
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
+    }
+}
+
+// Label Font
+extension UIFont {
+    var bold: UIFont {
+        return with(.traitBold)
+    }
+
+    var italic: UIFont {
+        return with(.traitItalic)
+    }
+
+    var boldItalic: UIFont {
+        return with([.traitBold, .traitItalic])
+    }
+
+
+
+    func with(_ traits: UIFontDescriptor.SymbolicTraits...) -> UIFont {
+        guard let descriptor = self.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits(traits).union(self.fontDescriptor.symbolicTraits)) else {
+            return self
+        }
+        return UIFont(descriptor: descriptor, size: 0)
+    }
+
+    func without(_ traits: UIFontDescriptor.SymbolicTraits...) -> UIFont {
+        guard let descriptor = self.fontDescriptor.withSymbolicTraits(self.fontDescriptor.symbolicTraits.subtracting(UIFontDescriptor.SymbolicTraits(traits))) else {
+            return self
+        }
+        return UIFont(descriptor: descriptor, size: 0)
     }
 }
